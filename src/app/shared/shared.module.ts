@@ -34,7 +34,24 @@ import {MatDividerModule} from "@angular/material/divider";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatBadgeModule} from "@angular/material/badge";
 import {MatStepperModule} from "@angular/material/stepper";
+import { AccordionDirective } from './components/accordion/accordion.directive';
+import {AccordionAnchorDirective} from './components/accordion/accordionanchor.directive';
+import {AccordionLinkDirective} from './components/accordion/accordionlink.directive';
+import {NgxUiLoaderConfig, NgxUiLoaderModule, SPINNER , PB_DIRECTION} from 'ngx-ui-loader';
 
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  text: 'Loading...',
+  textColor: '#ffffff',
+  textPosition: 'center-center',
+  pbColor: 'blue',
+  bgsColor: 'blue',
+  fgsColor:'blue',
+  fgsType: SPINNER.ballSpinClockwise,
+  fgsSize: 100,
+  pbDirection: PB_DIRECTION.leftToRight,
+  pbThickness: 5,
+};
 
 const MaterialModules = [
   FormsModule,
@@ -74,14 +91,22 @@ const MaterialModules = [
 
 @NgModule({
   declarations: [
-
+    AccordionAnchorDirective,
+    AccordionLinkDirective,
+    AccordionDirective
   ],
   imports: [
     CommonModule,
     MaterialModules,
     SharedRoutingModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig)
   ],
-  exports: [MaterialModules],
+  exports: [
+    MaterialModules,
+    AccordionAnchorDirective,
+    AccordionLinkDirective,
+    AccordionDirective
+  ],
   providers: []
 })
 export class SharedModule {
