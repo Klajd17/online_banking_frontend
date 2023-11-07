@@ -15,13 +15,14 @@ export class LoginService {
 
 
   public signUp(user: UserModel): Observable<any> {
-    return this.httpClient.post(this.url + '/register', user, {
-      headers: new HttpHeaders().set('Content-Type', 'application/json')
+    return this.httpClient.post(this.url + 'users/register', user, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      responseType: 'text'
     });
   }
 
   public login(data: any) {
-    return this.httpClient.post(this.url + '/login', data, {
+    return this.httpClient.post(this.url + 'users/login', data, {
       headers: new HttpHeaders().set('Content-Type', 'application/json')
     });
   }

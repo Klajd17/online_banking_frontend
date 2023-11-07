@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   name: 'development',
-  API_HOST: 'http://localhost:8080/',
+  API_HOST: 'http://localhost:8080/online_banking/',
   PAGE_SIZE: 10
 };
 
