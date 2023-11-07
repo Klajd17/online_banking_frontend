@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {UserModel} from "../models/models";
 import {Observable} from "rxjs";
 import {environment} from "../../../environments/environment";
+import {GlobalConstants} from "../../shared/cons/global-constants";
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ export class LoginService {
 
   initLoginFG(): FormGroup {
     return this.fb.group({
-      username: [null, [Validators.required]],
+      username: [null, [Validators.required, Validators.pattern(GlobalConstants.nameRegex)]],
       password: [null, [Validators.required]]
     });
   }

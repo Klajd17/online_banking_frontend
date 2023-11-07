@@ -7,22 +7,17 @@
 <mat-dialog-content class="mat-typography">
     <form [formGroup]="loginForm">
         <div fxFlex fxLayout="column">
-            <mat-form-field appearance="fill" fxFlex>
-                <mat-label>Username</mat-label>
-                <input matInput formControlName="username" required type="text">
-                <mat-error *ngIf="loginForm.controls['username'].touched && loginForm.controls['username'].hasError('required')">
-                    <span *ngIf="loginForm.controls['username'].hasError('required')">This field is mandatory.</span>
-                    <span *ngIf="loginForm.controls['username'].hasError('pattern')">This field is invalid.</span>
-                </mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="fill" fxFlex>
-                <mat-label>Password</mat-label>
-                <input matInput formControlName="password" required type="password">
-                <mat-error *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].hasError('required')">
-                    <span *ngIf="loginForm.controls['password'].hasError('required')">This field is mandatory.</span>
-                    <span *ngIf="loginForm.controls['password'].hasError('pattern')">This field is invalid.</span>
-                </mat-error>
-            </mat-form-field>
+          <mat-form-field appearance="fill" fxFlex>
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" required type="text">
+            <mat-error *ngIf="loginForm.get('username')?.hasError('required')">This field is mandatory.</mat-error>
+            <mat-error *ngIf="loginForm.get('username')?.hasError('pattern')">Invalid username.</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill" fxFlex>
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" required type="password">
+            <mat-error *ngIf="loginForm.get('password')?.hasError('required')">This field is mandatory.</mat-error>
+          </mat-form-field>
         </div>
     </form>
 </mat-dialog-content>
