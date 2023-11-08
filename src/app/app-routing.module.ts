@@ -20,15 +20,15 @@ const routes: Routes = [
         redirectTo: '/online-banking/dashboard',
         pathMatch: 'full',
       },
-      // {
-      //   path: '',
-      //   loadChildren:
-      //     () => import('./material-component/material.module').then(m => m.MaterialComponentsModule),
-      //   canActivate: [RouteGuardService],
-      //   data:{
-      //     expectedRole:['admin','user']
-      //   }
-      // },
+      {
+        path: '',
+        loadChildren:
+          () => import('./banking-component/banking-component.module').then(m => m.BankingComponentModule),
+        // canActivate: [RouteGuardService],
+        // data:{
+        //   expectedRole:['admin','user']
+        // }
+      },
       {
         path: 'dashboard',
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),

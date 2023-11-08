@@ -12,4 +12,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  changePassword(){
+      alert('Change Password');
+  }
+
+  logout(){
+    alert('Logout');
+  }
+
 }

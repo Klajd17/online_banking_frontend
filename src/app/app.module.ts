@@ -7,20 +7,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CoreModule} from "./core/core.module";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {NgxUiLoaderModule} from "ngx-ui-loader";
+import {SharedModule} from "./shared/shared.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    CoreModule,
-    NgxUiLoaderModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        CoreModule,
+        NgxUiLoaderModule,
+        SharedModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

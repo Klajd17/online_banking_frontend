@@ -18,6 +18,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   height: auto;
 }
 
+.banking-color{
+  background-color: #0750a1!important;
+}
+
 .mat-header-cell,.mat-cell {
   text-align: center !important;
   padding: 0px 8px 0px 15px !important;
@@ -44,6 +48,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .mat-toolbar.mat-primary {
-  background: #1679e5!important;
+  background: #0750a1!important;
   color: white;
 }
