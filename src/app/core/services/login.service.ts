@@ -24,9 +24,19 @@ export class LoginService {
 
   public login(data: any) {
     return this.httpClient.post(this.url + 'users/login', data, {
-      headers: new HttpHeaders().set('Content-Type', 'application/json')
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      responseType: 'text'
     });
   }
+
+  public forgotPassword(data: any) {
+    return this.httpClient.post(this.url + 'users/forgotPassword', data, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      responseType: 'text'
+    });
+  }
+
+
 
   initLoginFG(): FormGroup {
     return this.fb.group({
