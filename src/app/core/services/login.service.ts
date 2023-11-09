@@ -40,6 +40,12 @@ export class LoginService {
 
   }
 
+  changePassword(data: any) {
+    return this.httpClient.post(this.url + '/users/changePassword/', data, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json')
+    });
+  }
+
 
 
   initLoginFG(): FormGroup {
