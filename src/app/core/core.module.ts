@@ -15,6 +15,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { FullComponent } from './components/layouts/full/full.component';
 import { HeaderComponent } from './components/layouts/full/header/header.component';
 import { SidebarComponent } from './components/layouts/full/sidebar/sidebar.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SidebarComponent } from './components/layouts/full/sidebar/sidebar.comp
     HomeComponent,
     FullComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    ForgotPasswordComponent
   ],
     imports: [
         CommonModule,

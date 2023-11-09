@@ -3,6 +3,7 @@ import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {LoginComponent} from "../login/login.component";
 import {SignupComponent} from "../signup/signup.component";
 import {NgxUiLoaderService} from "ngx-ui-loader";
+import {ForgotPasswordComponent} from "../forgot-password/forgot-password.component";
 
 @Component({
   selector: 'app-home',
@@ -29,9 +30,9 @@ export class HomeComponent implements OnInit {
   }
 
   forgotPasswordAction(){
-     alert('Forgot Password')
-    //Loader Test
-    // this.ngxService.start()
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '550px';
+    this.dialog.open(ForgotPasswordComponent, dialogConfig);
   }
 
 }
