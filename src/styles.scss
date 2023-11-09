@@ -54,7 +54,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   justify-content: space-between;
 }
 .main-heading-primary{
-  color: #fff;
+  font-size: 29px;
+  font-weight: bold; /* Make the text bold */
+  color: #fff; /* Set the text color to a specific color (e.g., dark gray) */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .main-heading-container {

@@ -25,7 +25,7 @@ export class LoginService {
   public login(data: any) {
     return this.httpClient.post(this.url + 'users/login', data, {
       headers: new HttpHeaders().set('Content-Type', 'application/json'),
-      responseType: 'text'
+      // 17
     });
   }
 
@@ -34,6 +34,10 @@ export class LoginService {
       headers: new HttpHeaders().set('Content-Type', 'application/json'),
       responseType: 'text'
     });
+  }
+
+  checkToken(){
+
   }
 
 

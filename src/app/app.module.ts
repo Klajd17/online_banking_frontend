@@ -8,6 +8,8 @@ import {CoreModule} from "./core/core.module";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {NgxUiLoaderModule} from "ngx-ui-loader";
 import {SharedModule} from "./shared/shared.module";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {TokenInterceptor} from "./core/services/token.interceptor";
 
 
 @NgModule({
@@ -22,7 +24,7 @@ import {SharedModule} from "./shared/shared.module";
         NgxUiLoaderModule,
         SharedModule
     ],
-  providers: [],
+  providers: [HttpClientModule,{provide:HTTP_INTERCEPTORS, useClass:TokenInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
