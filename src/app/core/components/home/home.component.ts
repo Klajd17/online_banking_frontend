@@ -48,7 +48,6 @@ export class HomeComponent implements OnInit {
       //   }
       // );
     } else {
-      alert('You have to log in');
       this.router.navigate(['/']);
     }
 

@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import {ConfirmationComponent} from "../../../../../banking-component/dialog/confirmation/confirmation.component";
+import {Router} from "@angular/router";
+import {
+  ChangePasswordComponent
+} from "../../../../../banking-component/dialog/change-password/change-password.component";
 
 @Component({
   selector: 'app-header',
@@ -7,17 +13,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
   changePassword(){
-      alert('Change Password');
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '550px';
+    this.dialog.open(ChangePasswordComponent, dialogConfig);
   }
 
   logout(){
-    alert('Logout');
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+      message: 'Logout'
+    };
+    const dialogRef = this.dialog.open(ConfirmationComponent, dialogConfig);
+    const sub = dialogRef.componentInstance.onEmitStatusChange.subscribe((user) => {
+      dialogRef.close();
+      localStorage.clear();
+      this.router.navigate(['/']);
+    });
   }
 
 }
