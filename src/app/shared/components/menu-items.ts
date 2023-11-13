@@ -9,8 +9,8 @@ export interface Menu{
 
 const MENUITEMS = [
   {state: 'dashboard', name: 'Dashboard', icon: 'dashboard', role: ''},
-  {state: 'account', name: 'Manage Accounts', icon: 'account_balance', role: 'admin'},
-  {state: 'transaction', name: 'Manage Transactions', icon: 'inventory_2', role: 'admin'},
+  {state: 'account', name: 'Accounts', icon: 'account_balance', role: 'admin'},
+  {state: 'transaction', name: 'Transactions History', icon: 'inventory_2', role: 'admin'},
   {state: 'card', name: 'Manage Cards', icon: 'credit_card', role: 'admin'},
 ];
 

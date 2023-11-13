@@ -1,1 +1,54 @@
-<p>manage-account works!</p>
+<!--<mat-card>-->
+<!--  <b><span>Manage Account</span></b>-->
+<!--  <button mat-flat-button class="float-right" (click)="handleAddAction()">Add Account</button>-->
+<!--</mat-card>-->
+<!--<hr>-->
+<div class="main-heading-container">
+  <h2 class="main-heading">
+    <span class="main-heading-primary">Manage Accounts</span>
+  </h2>
+</div>
+<mat-card>
+  <mat-form-field appearance="fill">
+    <mat-label>Search</mat-label>
+    <input matInput (keyup)="applyFilter($event)" #input>
+  </mat-form-field>
+</mat-card>
+<hr>
+<mat-card class="balance-container">
+   <button mat-flat-button style="background-color: #0caf0c!important;" (click)="handleAddAction()">Add Account</button>
+    <div class="current-balance">
+      <h2>$857.68<span>Current Balance</span></h2>
+    </div>
+    <button mat-flat-button color="primary" style="background-color: #eba31e!important;" (click)="handleAddAction()"> Transaction </button>
+</mat-card>
+
+<hr>
+<div class="responsive_table">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="accountNumber">
+      <th mat-header-cell *matHeaderCellDef>Account Number</th>
+      <td mat-cell *matCellDef="let element">{{element.accountNumber}}</td>
+    </ng-container>
+    <ng-container matColumnDef="accountType">
+      <th mat-header-cell *matHeaderCellDef>Account Type</th>
+      <td mat-cell *matCellDef="let element">{{element.accountType}}</td>
+    </ng-container>
+    <ng-container matColumnDef="balance">
+      <th mat-header-cell *matHeaderCellDef>Account Balance</th>
+      <td mat-cell *matCellDef="let element">${{element.balance}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let element" class="action-link">
+        <button mat-icon-button matTooltip="Edit" (click)="handleEditAction(element)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+    <tr mat-row *matRowDef="let row;columns:displayedColumns"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[3, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

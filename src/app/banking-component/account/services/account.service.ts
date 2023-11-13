@@ -12,7 +12,7 @@ export class AccountService {
   constructor(private httpClient:HttpClient) { }
 
   add(data: AccountModel) {
-    return this.httpClient.post(this.url + '/accounts/add/', data, {
+    return this.httpClient.post(this.url + 'accounts/add/', data, {
       headers: new HttpHeaders().set('Content-Type', 'application/json')
     });
   }
@@ -24,11 +24,11 @@ export class AccountService {
   }
 
   getAccounts(): Observable<AccountModel[]> {
-    return this.httpClient.get<AccountModel[]>(`${this.url}/accounts/all`);
+    return this.httpClient.get<AccountModel[]>(`${this.url}accounts/all`);
   }
 
   delete(id: number) {
-    return this.httpClient.delete(`${this.url}/delete/${id}`, {
+    return this.httpClient.delete(`${this.url}delete/${id}`, {
       headers: new HttpHeaders().set('Content-Type', 'application/json')
     });
   }
