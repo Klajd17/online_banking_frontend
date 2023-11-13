@@ -11,4 +11,20 @@ export const MaterialRoutes: Routes = [
       expectedRole: ['admin']
     }
   },
+  {
+    path: 'account',
+    component: ManageAccountComponent ,
+    canActivate: [RouteGuardService],
+    data: {
+      expectedRole: ['admin']
+    }
+  },
+  {
+    path: 'account',
+    component: ManageAccountComponent ,
+    canActivate: [RouteGuardService],
+    data: {
+      expectedRole: ['admin']
+    }
+  }
 ];
