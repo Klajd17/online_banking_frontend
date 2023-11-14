@@ -20,7 +20,7 @@
     <div class="current-balance">
       <h2>$857.68<span>Current Balance</span></h2>
     </div>
-    <button mat-flat-button color="primary" style="background-color: #eba31e!important;" (click)="handleAddAction()"> Transaction </button>
+    <button mat-flat-button color="primary" style="background-color: #eba31e!important;" (click)="handleTransaction()"> Transaction </button>
 </mat-card>
 
 <hr>
@@ -42,8 +42,8 @@
     <ng-container matColumnDef="edit">
       <th mat-header-cell *matHeaderCellDef>Action</th>
       <td mat-cell *matCellDef="let element" class="action-link">
-        <button mat-icon-button matTooltip="Edit" (click)="handleEditAction(element)">
-          <mat-icon>edit</mat-icon>
+        <button mat-icon-button matTooltip="View" (click)="handleEditAction(element)">
+          <mat-icon>remove_red_eye</mat-icon>
         </button>
       </td>
     </ng-container>

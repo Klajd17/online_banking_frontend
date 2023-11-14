@@ -11,6 +11,7 @@ import {SharedModule} from "./shared/shared.module";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {TokenInterceptor} from "./core/services/token.interceptor";
 import {AccountModule} from "./banking-component/account/account.module";
+import {TransactionModule} from "./banking-component/transaction/transaction.module";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {AccountModule} from "./banking-component/account/account.module";
         CoreModule,
         NgxUiLoaderModule,
         SharedModule,
-        AccountModule
+        AccountModule,
+        TransactionModule
     ],
   providers: [HttpClientModule,{provide:HTTP_INTERCEPTORS, useClass:TokenInterceptor,multi:true}],
   bootstrap: [AppComponent]

@@ -14,11 +14,15 @@ import {MatTableModule} from "@angular/material/table";
 import {MatButtonModule} from "@angular/material/button";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import { AccountComponent } from './dialogs/account/account.component';
+import { TransactionDialogComponent } from './dialogs/transaction-dialog/transaction-dialog.component';
 
 
 @NgModule({
   declarations: [
-    ManageAccountComponent
+    ManageAccountComponent,
+    AccountComponent,
+    TransactionDialogComponent
   ],
   imports: [
     CommonModule,
