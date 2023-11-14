@@ -31,6 +31,9 @@ html {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 8px;
+  background-color: #FFFFFF;
+  padding: 1rem 0;
+  border-radius: 17px;
 }
 
 .about-section {
@@ -51,7 +54,7 @@ html {
 }
 
 .title {
-  color: black;
+  color: #0c6ea5;
   text-align: center !important;
 }
 
@@ -61,15 +64,20 @@ html {
   display: inline-block;
   padding: 8px;
   color: white;
-  background-color: #0c6ea5;
+  background-color: #3f9cd1;
   text-align: center;
   cursor: pointer;
   width: 100%;
   font-weight: bold;
+  border-radius: 8px;
 }
 
 .button:hover {
   background-color: #555;
+}
+
+.title-bold{
+  font-weight: bold;
 }
 
 @media screen and (max-width: 650px) {

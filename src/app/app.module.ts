@@ -12,6 +12,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {TokenInterceptor} from "./core/services/token.interceptor";
 import {AccountModule} from "./banking-component/account/account.module";
 import {TransactionModule} from "./banking-component/transaction/transaction.module";
+import {CardModule} from "./banking-component/card/card.module";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {TransactionModule} from "./banking-component/transaction/transaction.mod
         NgxUiLoaderModule,
         SharedModule,
         AccountModule,
-        TransactionModule
+        TransactionModule,
+        CardModule
     ],
   providers: [HttpClientModule,{provide:HTTP_INTERCEPTORS, useClass:TokenInterceptor,multi:true}],
   bootstrap: [AppComponent]
