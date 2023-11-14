@@ -91,4 +91,14 @@ File: scss
     .no-block{
         display: flex;
     }
+  .current-balance{
+    width: 50%!important;
+  }
+
+}
+
+@media(max-width:900px) {
+  .current-balance{
+    width: 50%!important;
+  }
 }
