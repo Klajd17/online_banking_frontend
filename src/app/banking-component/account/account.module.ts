@@ -16,6 +16,8 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import { AccountComponent } from './dialogs/account/account.component';
 import { TransactionDialogComponent } from './dialogs/transaction-dialog/transaction-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { TransactionDialogComponent } from './dialogs/transaction-dialog/transac
     MatTableModule,
     MatButtonModule,
     MatTooltipModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule,
+    ReactiveFormsModule
   ]
 })
 export class AccountModule { }

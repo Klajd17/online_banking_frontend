@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
         this.dialogRef.close();
         console.log(response)
         localStorage.setItem('token', MOCK_TOKEN);
+        localStorage.setItem('userId', response.userId);
         this.router.navigate(['/online-banking/dashboard'])
       },
       error: (error) => {
