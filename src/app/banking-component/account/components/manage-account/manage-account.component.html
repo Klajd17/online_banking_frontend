@@ -26,6 +26,10 @@
 <hr>
 <div class="responsive_table">
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="accountName">
+      <th mat-header-cell *matHeaderCellDef>Account Name</th>
+      <td mat-cell *matCellDef="let element">{{element.accountName}}</td>
+    </ng-container>
     <ng-container matColumnDef="accountNumber">
       <th mat-header-cell *matHeaderCellDef>Account Number</th>
       <td mat-cell *matCellDef="let element">{{element.accountNumber}}</td>

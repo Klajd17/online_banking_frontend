@@ -19,7 +19,7 @@ import {TransactionDialogComponent} from "../../dialogs/transaction-dialog/trans
   styleUrls: ['./manage-account.component.scss']
 })
 export class ManageAccountComponent implements OnInit {
-  displayedColumns: string[] = ['accountNumber','accountType','balance', 'edit'];
+  displayedColumns: string[] = ['accountName','accountNumber','accountType','balance', 'edit'];
   accountList: AccountModel[] = [];
   dataSource: any;
   responseMessage: any;

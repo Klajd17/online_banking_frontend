@@ -1,6 +1,7 @@
 export class AccountModel {
   constructor(
     public accountId: number = 0,
+    public accountName: string = '',
     public userId: number = 0,
     public accountNumber: string = '',
     public balance: number = 0.00,
