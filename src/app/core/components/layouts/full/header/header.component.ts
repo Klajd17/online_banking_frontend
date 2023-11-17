@@ -24,6 +24,12 @@ export class HeaderComponent implements OnInit {
     this.dialog.open(ChangePasswordComponent, dialogConfig);
   }
 
+  viewProfile(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '550px';
+    this.dialog.open(ChangePasswordComponent, dialogConfig);
+  }
+
   logout(){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = {

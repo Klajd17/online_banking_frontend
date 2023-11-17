@@ -5,13 +5,15 @@ import { ChangePasswordComponent } from './dialog/change-password/change-passwor
 import {SharedModule} from "../shared/shared.module";
 import {MaterialRoutes} from "./banking.routing";
 import {RouterModule} from "@angular/router";
+import { ViewProfileComponent } from './dialog/view-profile/view-profile.component';
 
 
 
 @NgModule({
   declarations: [
     ConfirmationComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    ViewProfileComponent
   ],
     imports: [
       CommonModule,

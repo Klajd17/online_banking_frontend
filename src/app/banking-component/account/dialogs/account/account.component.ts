@@ -18,7 +18,8 @@ import {AccountModel} from "../../models/account-model";
 export class AccountComponent implements OnInit {
   accountForm: FormGroup = new FormGroup({});
   responseMessage: any;
-  userId:any = localStorage.getItem('userId');
+  // @ts-ignore
+  user:any = JSON.parse(localStorage.getItem('user'));
   balance:any = 0.00;
 
   constructor(private formBuilder: FormBuilder, private router: Router, private accountService: AccountService,
@@ -27,11 +28,12 @@ export class AccountComponent implements OnInit {
 
   ngOnInit(): void {
     this.initCreateAccountFG();
+    console.log(this.user.username)
   }
 
   handleAccountSubmit(){
     this.ngxService.start();
-    const formData = { ...this.accountForm.value, userId: this.userId ,balance: this.balance};
+    const formData = { ...this.accountForm.value, userId: this.user.userId ,balance: this.balance};
     this.accountService.add(formData).subscribe({
       next: (response: any) => {
         this.ngxService.stop();
