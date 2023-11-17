@@ -1,0 +1,23 @@
+<!--<mat-toolbar color="primary">-->
+<!--  <mat-toolbar-row fxLayout="row">-->
+<!--    <span class="title-center">Profile</span>-->
+<!--  </mat-toolbar-row>-->
+<!--</mat-toolbar>-->
+
+<mat-dialog-content>
+  <div class="profile-card">
+    <div class="profile-header">
+      <h2>{{ user?.fullName }}</h2>
+      <p>{{ user?.username }}</p>
+    </div>
+    <div class="profile-details">
+      <p><b>Email:</b> {{ user?.email }}</p>
+      <p><b>Address:</b>  {{ user?.address }}</p>
+      <p><b>Phone Number:</b> {{ user?.phoneNumber }}</p>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <button mat-raised-button color="primary" mat-dialog-close>Close</button>
+</mat-dialog-actions>

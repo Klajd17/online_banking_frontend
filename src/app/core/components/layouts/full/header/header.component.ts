@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import {
   ChangePasswordComponent
 } from "../../../../../banking-component/dialog/change-password/change-password.component";
+import {ViewProfileComponent} from "../../../../../banking-component/dialog/view-profile/view-profile.component";
 
 @Component({
   selector: 'app-header',
@@ -27,7 +28,7 @@ export class HeaderComponent implements OnInit {
   viewProfile(){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = '550px';
-    this.dialog.open(ChangePasswordComponent, dialogConfig);
+    this.dialog.open(ViewProfileComponent, dialogConfig);
   }
 
   logout(){
