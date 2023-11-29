@@ -30,7 +30,7 @@ export class RouteGuardService {
       }
     }
     // tslint:disable-next-line:triple-equals
-    if (tokenPayload.role == 'user' || tokenPayload.role == 'admin'){
+    if (tokenPayload.role == 'USER' || tokenPayload.role == 'ADMIN'){
       if (this.auth.isAuthenticated() && checkRole){
         return true;
       }

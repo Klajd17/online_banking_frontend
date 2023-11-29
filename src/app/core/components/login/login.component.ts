@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
         this.ngxService.stop();
         this.dialogRef.close();
         console.log(response)
-        localStorage.setItem('token', MOCK_TOKEN);
+        localStorage.setItem('token', response.accessToken);
         localStorage.setItem('user', JSON.stringify(response));
         this.router.navigate(['/online-banking/dashboard'])
       },
