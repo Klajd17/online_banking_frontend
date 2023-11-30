@@ -15,10 +15,6 @@ table{
   color: #fff;
 }
 
-.mat-icon-button{
-  color: #0c6ea5!important;
-}
-
 .current-balance {
   background: #5b6eb5;
   border: 1px solid #5b6eb5;
@@ -49,8 +45,8 @@ table{
 
 .balance-container{
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
   //background-image: url("../../../../../assets/balance-bg1.jpg");
 }
 
@@ -58,7 +54,96 @@ table{
   min-height: 12vh;
 }
 
+.main-heading-account{
+  margin-top: 7px;
+  font-size: 23px;
+  color: #0c6ea5;
+}
+
 .main-heading-container::before,
 .main-heading-container::after{
   width: 98%;
 }
+
+
+.responsive_grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.account-card {
+  margin: 16px;
+  transition: transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 12px;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.mat-card-header{
+  padding: 1rem 1rem 0.5rem;
+  background-color: #0c6ea5;
+  color: #fff;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.account-card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+  text-align: center;
+}
+
+.account-card-subtitle {
+  font-size: 1rem;
+  color: #555;
+}
+
+.account-card-content {
+  padding: 8px;
+  border-top: 1px solid #eee;
+}
+
+.account-card-content p {
+  margin: 8px 0;
+  color: #777; /* Change the color if needed */
+}
+
+.account-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background-color: #f5f5f5;
+}
+
+.mat-card-actions{
+  display: flex;
+  justify-content: center;
+}
+
+.mat-icon-button {
+  background-color: #2196f3;
+  color: #fff;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: #1565c0;
+  }
+}
+
+.mat-card-content p strong {
+  font-weight: bold;
+  color: #333
+}
+

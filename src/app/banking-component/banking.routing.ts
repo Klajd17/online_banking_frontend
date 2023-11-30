@@ -10,7 +10,7 @@ export const MaterialRoutes: Routes = [
     component: ManageAccountComponent ,
     canActivate: [RouteGuardService],
     data: {
-      expectedRole: ['ADMIN']
+      expectedRole: ['ADMIN','USER']
     }
   },
   {
@@ -18,7 +18,7 @@ export const MaterialRoutes: Routes = [
     component: ManageTransactionsComponent ,
     canActivate: [RouteGuardService],
     data: {
-      expectedRole: ['ADMIN']
+      expectedRole: ['ADMIN','USER']
     }
   },
   {
@@ -26,7 +26,7 @@ export const MaterialRoutes: Routes = [
     component: ManageCardsComponent ,
     canActivate: [RouteGuardService],
     data: {
-      expectedRole: ['ADMIN']
+      expectedRole: ['ADMIN','USER']
     }
   }
 ];

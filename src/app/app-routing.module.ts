@@ -27,7 +27,7 @@ const routes: Routes = [
           () => import('./banking-component/banking-component.module').then(m => m.BankingComponentModule),
         canActivate: [RouteGuardService],
         data:{
-          expectedRole:['ADMIN']
+          expectedRole:['ADMIN','USER']
         }
       },
       {

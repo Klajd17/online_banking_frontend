@@ -12,6 +12,7 @@ import {MatPaginator} from "@angular/material/paginator";
 import {LoginComponent} from "../../../../core/components/login/login.component";
 import {AccountComponent} from "../../dialogs/account/account.component";
 import {TransactionDialogComponent} from "../../dialogs/transaction-dialog/transaction-dialog.component";
+import {UserModel} from "../../../../core/models/models";
 
 @Component({
   selector: 'app-manage-account',
@@ -19,13 +20,18 @@ import {TransactionDialogComponent} from "../../dialogs/transaction-dialog/trans
   styleUrls: ['./manage-account.component.scss']
 })
 export class ManageAccountComponent implements OnInit {
-  displayedColumns: string[] = ['accountName','accountNumber','accountType','balance', 'edit'];
   accountList: AccountModel[] = [];
-  dataSource: any;
   responseMessage: any;
-  @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
-  constructor(private accountService: AccountService, private ngxService: NgxUiLoaderService, private dialog: MatDialog,
-              private snackbarService: SnackbarService, private router: Router) { }
+  // @ts-ignore
+  user: UserModel = JSON.parse(localStorage.getItem('user'));
+
+  constructor(
+    private accountService: AccountService,
+    private ngxService: NgxUiLoaderService,
+    private dialog: MatDialog,
+    private snackbarService: SnackbarService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.ngxService.start();
@@ -37,11 +43,7 @@ export class ManageAccountComponent implements OnInit {
       next: (response: AccountModel[]) => {
         this.ngxService.stop();
         this.accountList = response;
-        console.log(this.accountList);
-
-        // Use MatTableDataSource with paginator
-        this.dataSource = new MatTableDataSource(response);
-        this.dataSource.paginator = this.paginator;
+        console.log(JSON.stringify(this.accountList));
       },
       error: (error) => {
         this.ngxService.stop();
@@ -55,24 +57,24 @@ export class ManageAccountComponent implements OnInit {
     });
   }
 
-  handleAddAction(){
+  handleAddAction() {
     const dialogConfig = new MatDialogConfig;
     dialogConfig.width = '550px';
-    this.dialog.open(AccountComponent, dialogConfig)
+    this.dialog.open(AccountComponent, dialogConfig);
   }
 
   applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    // Filter  logic
   }
 
-  handleEditAction(element:any) {
-
+  handleEditAction(element: any) {
+    // Edit action logic
   }
 
-  handleTransaction(){
+  handleTransaction() {
     const dialogConfig = new MatDialogConfig;
     dialogConfig.width = '550px';
-    this.dialog.open(TransactionDialogComponent, dialogConfig)
+    this.dialog.open(TransactionDialogComponent, dialogConfig);
   }
 }
+

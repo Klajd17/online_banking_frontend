@@ -8,51 +8,74 @@
     <span class="main-heading-primary">Manage Accounts</span>
   </h2>
 </div>
-<mat-card>
-  <mat-form-field appearance="fill">
-    <mat-label>Search</mat-label>
-    <input matInput (keyup)="applyFilter($event)" #input>
-  </mat-form-field>
-</mat-card>
-<hr>
+<!--<mat-card>-->
+<!--  <mat-form-field appearance="fill">-->
+<!--    <mat-label>Search</mat-label>-->
+<!--    <input matInput (keyup)="applyFilter($event)" #input>-->
+<!--  </mat-form-field>-->
+<!--</mat-card>-->
+<!--<hr>-->
+<!--<mat-card class="balance-container">-->
+<!--   <button mat-flat-button style="background-color: #0caf0c!important;" (click)="handleAddAction()">Add Account</button>-->
+<!--    <div class="current-balance">-->
+<!--      <h2>$857.68<span>Current Balance</span></h2>-->
+<!--    </div>-->
+<!--    <button mat-flat-button color="primary" style="background-color: #eba31e!important;" (click)="handleTransaction()"> Transaction </button>-->
+<!--</mat-card>-->
+
 <mat-card class="balance-container">
    <button mat-flat-button style="background-color: #0caf0c!important;" (click)="handleAddAction()">Add Account</button>
-    <div class="current-balance">
-      <h2>$857.68<span>Current Balance</span></h2>
-    </div>
+    <p class="main-heading-account">Welcome {{this.user.username}}</p>
     <button mat-flat-button color="primary" style="background-color: #eba31e!important;" (click)="handleTransaction()"> Transaction </button>
 </mat-card>
-
-<hr>
-<div class="responsive_table">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <ng-container matColumnDef="accountName">
-      <th mat-header-cell *matHeaderCellDef>Account Name</th>
-      <td mat-cell *matCellDef="let element">{{element.accountName}}</td>
-    </ng-container>
-    <ng-container matColumnDef="accountNumber">
-      <th mat-header-cell *matHeaderCellDef>Account Number</th>
-      <td mat-cell *matCellDef="let element">{{element.accountNumber}}</td>
-    </ng-container>
-    <ng-container matColumnDef="accountType">
-      <th mat-header-cell *matHeaderCellDef>Account Type</th>
-      <td mat-cell *matCellDef="let element">{{element.accountType}}</td>
-    </ng-container>
-    <ng-container matColumnDef="balance">
-      <th mat-header-cell *matHeaderCellDef>Account Balance</th>
-      <td mat-cell *matCellDef="let element">${{element.balance}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="edit">
-      <th mat-header-cell *matHeaderCellDef>Action</th>
-      <td mat-cell *matCellDef="let element" class="action-link">
-        <button mat-icon-button matTooltip="View" (click)="handleEditAction(element)">
-          <mat-icon>remove_red_eye</mat-icon>
-        </button>
-      </td>
-    </ng-container>
-    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
-    <tr mat-row *matRowDef="let row;columns:displayedColumns"></tr>
-  </table>
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+<!--<hr>-->
+<div class="responsive_grid">
+  <mat-card *ngFor="let element of accountList" class="account-card">
+    <mat-card-header>
+      <mat-card-title>{{element.accountName}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Account Number:</strong> {{element.accountNumber}}</p>
+      <p><strong>Account Type:</strong> {{element.accountType}}</p>
+      <p><strong>Balance:</strong> ${{element.balance}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button matTooltip="View" (click)="handleEditAction(element)">
+        <mat-icon>remove_red_eye</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
 </div>
+
+<!--<div class="responsive_table">-->
+<!--  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">-->
+<!--    <ng-container matColumnDef="accountName">-->
+<!--      <th mat-header-cell *matHeaderCellDef>Account Name</th>-->
+<!--      <td mat-cell *matCellDef="let element">{{element.accountName}}</td>-->
+<!--    </ng-container>-->
+<!--    <ng-container matColumnDef="accountNumber">-->
+<!--      <th mat-header-cell *matHeaderCellDef>Account Number</th>-->
+<!--      <td mat-cell *matCellDef="let element">{{element.accountNumber}}</td>-->
+<!--    </ng-container>-->
+<!--    <ng-container matColumnDef="accountType">-->
+<!--      <th mat-header-cell *matHeaderCellDef>Account Type</th>-->
+<!--      <td mat-cell *matCellDef="let element">{{element.accountType}}</td>-->
+<!--    </ng-container>-->
+<!--    <ng-container matColumnDef="balance">-->
+<!--      <th mat-header-cell *matHeaderCellDef>Account Balance</th>-->
+<!--      <td mat-cell *matCellDef="let element">${{element.balance}}</td>-->
+<!--    </ng-container>-->
+
+<!--    <ng-container matColumnDef="edit">-->
+<!--      <th mat-header-cell *matHeaderCellDef>Action</th>-->
+<!--      <td mat-cell *matCellDef="let element" class="action-link">-->
+<!--        <button mat-icon-button matTooltip="View" (click)="handleEditAction(element)">-->
+<!--          <mat-icon>remove_red_eye</mat-icon>-->
+<!--        </button>-->
+<!--      </td>-->
+<!--    </ng-container>-->
+<!--    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>-->
+<!--    <tr mat-row *matRowDef="let row;columns:displayedColumns"></tr>-->
+<!--  </table>-->
+<!--  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>-->
+<!--</div>-->
