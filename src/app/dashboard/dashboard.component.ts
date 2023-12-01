@@ -24,28 +24,24 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.user)
+    this.dashboardData = new DashboardModel();
     this.getDashboardData()
   }
 
   getDashboardData() {
-    this.ngxService.start();
 
     this.dashboardService.getDashboardData().subscribe({
       next: (response: DashboardModel) => {
-        this.ngxService.stop();
         this.dashboardData = response;
         console.log(this.dashboardData);
       },
       error: (error) => {
-        this.ngxService.stop();
-
         if (error.status === 401) {
         } else if (error.error?.message) {
           this.responseMessage = error.error.message;
         } else {
           this.responseMessage = 'An error occurred. Please try again later.';
         }
-
         this.snackbarService.openSnackBar(this.responseMessage, GlobalConstants.error);
       }
     });
