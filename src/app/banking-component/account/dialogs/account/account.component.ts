@@ -28,7 +28,7 @@ export class AccountComponent implements OnInit {
 
   ngOnInit(): void {
     this.initCreateAccountFG();
-    console.log(this.user.username)
+    console.log(this.user.userId)
   }
 
   handleAccountSubmit(){
@@ -39,7 +39,7 @@ export class AccountComponent implements OnInit {
         this.ngxService.stop();
         this.dialogRef.close();
         console.log(response)
-        this.responseMessage = response;
+        this.responseMessage = response.message;
         this.snackbarService.openSnackBar(this.responseMessage, 'success');
       },
       error: (error) => {
@@ -57,7 +57,6 @@ export class AccountComponent implements OnInit {
   initCreateAccountFG(){
     this.accountForm = this.formBuilder.group({
       accountName: [null, [Validators.required]],
-      accountNumber: [null, [Validators.required]],
       currency: [null, [Validators.required]],
       accountType: [null, [Validators.required]],
     });

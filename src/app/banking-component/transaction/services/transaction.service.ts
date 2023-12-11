@@ -4,6 +4,7 @@ import {AccountModel} from "../../account/models/account-model";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {TransactionModel} from "../models/transaction-model";
+import {TransactionCreateModel} from "../../account/models/transaction-create-model";
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,8 @@ export class TransactionService {
   url = environment.API_HOST;
   constructor(private httpClient:HttpClient) { }
 
-  add(data: TransactionModel) {
-    return this.httpClient.post(this.url + 'transactions/add/', data, {
+  add(data: TransactionCreateModel) {
+    return this.httpClient.post(this.url + 'transactions/add', data, {
       headers: new HttpHeaders().set('Content-Type', 'application/json')
     });
   }

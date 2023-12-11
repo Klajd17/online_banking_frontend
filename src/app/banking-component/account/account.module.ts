@@ -18,6 +18,9 @@ import { AccountComponent } from './dialogs/account/account.component';
 import { TransactionDialogComponent } from './dialogs/transaction-dialog/transaction-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatStepperModule} from "@angular/material/stepper";
+import {MatSelectModule} from "@angular/material/select";
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 
 @NgModule({
@@ -40,7 +43,10 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatTooltipModule,
     MatPaginatorModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatSelectModule,
+    MatToolbarModule
   ]
 })
 export class AccountModule { }

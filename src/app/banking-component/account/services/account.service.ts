@@ -12,7 +12,7 @@ export class AccountService {
   constructor(private httpClient:HttpClient) { }
 
   add(data: AccountModel) {
-    return this.httpClient.post(this.url + 'accounts/add/', data, {
+    return this.httpClient.post(this.url + 'accounts/add', data, {
       headers: new HttpHeaders().set('Content-Type', 'application/json')
     });
   }

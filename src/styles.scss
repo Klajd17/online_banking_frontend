@@ -94,6 +94,23 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   right: -50%;
 }
 
+.bold-text{
+  font-weight: bold;
+}
+
+.mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit{
+  background-color: #0caf0c!important;
+  color: white;
+}
+
+.mat-step-text-label{
+  font-weight: bold;
+}
+
+.mat-step-header .mat-step-label.mat-step-label-active {
+  color: #005b8f !important;
+}
+
 @keyframes rotateAnimation {
   0% {
     transform: rotate(0deg);
