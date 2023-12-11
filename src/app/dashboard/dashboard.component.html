@@ -1,1 +1,68 @@
-<p>dashboard works!</p>
+<!--<body>-->
+<!--<mat-card>-->
+<!--  <b><span>Dashboard</span></b>-->
+<!--</mat-card>-->
+<!--<br>-->
+<div class="main-heading-container">
+  <h2 class="main-heading">
+    <span class="main-heading-primary">Welcome {{user.username}}</span>
+  </h2>
+</div>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2 class="title title-bold">Accounts</h2>
+        <h1 class="title">{{dashboardData?.accountsNumber}}</h1>
+        <p><button class="button" [routerLink]="['/online-banking/account']">View </button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2 class="title title-bold">Transactions</h2>
+        <h1 class="title">{{dashboardData?.transactionsNumber}}</h1>
+        <p><button class="button" [routerLink]="['/online-banking/transaction']">View </button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2 class="title title-bold">Cards</h2>
+        <h1 class="title">{{dashboardData?.cardsNumber}}</h1>
+        <p><button class="button" [routerLink]="['/online-banking/card']">View</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2 class="title title-bold">Total Balance</h2>
+        <h1 class="title">${{dashboardData?.totalBalance}}</h1>
+        <p><button class="button" [routerLink]="['/online-banking/account']">View </button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2 class="title title-bold">Total Incoming</h2>
+        <h1 class="title">${{dashboardData?.totalIncoming}}</h1>
+        <p><button class="button" [routerLink]="['/online-banking/transaction']">View </button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2 class="title title-bold">Total Outcoming</h2>
+        <h1 class="title">${{dashboardData?.totalOutcoming}}</h1>
+        <p><button class="button" [routerLink]="['/online-banking/account']">View</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--</body>-->
+

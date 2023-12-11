@@ -1,0 +1,42 @@
+.mat-toolbar {
+  margin: -24px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.title-center {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+mat-form-field {
+  padding: 5px;
+}
+
+.mat-dialog-container{
+  padding: 0px!important;
+}
+
+.profile-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  //max-width: 300px; /* Adjusted to 'max-width' to ensure responsiveness */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Center the card horizontally */
+}
+
+.profile-header {
+  background-color: #60b98c;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.profile-details {
+  padding: 20px;
+}
+
+.profile-details p {
+  margin-bottom: 10px;
+}

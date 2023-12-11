@@ -1,0 +1,58 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row fxLayout="row">
+    <span class="title-center">Create Transaction</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-dialog-content>
+<mat-vertical-stepper [linear]="true" [selectedIndex]="step - 1">
+  <!-- Step 1: Select Transaction Type -->
+  <mat-step [completed]="transactionForm.controls['transactionType'].valid">
+    <ng-template matStepLabel>Select Transaction Type</ng-template>
+    <form [formGroup]="transactionForm" (ngSubmit)="nextStep()">
+      <div>
+        <label for="transactionType">Transaction Type:</label>
+        <mat-select formControlName="transactionType" id="transactionType">
+          <mat-option *ngFor="let type of transactionTypes" [value]="type">{{ type }}</mat-option>
+        </mat-select>
+      </div>
+      <div>
+        <button style="padding: 0px; background-color: #d7dfe3" mat-button matStepperNext type="button" [disabled]="!transactionForm.controls['transactionType'].valid">Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <!-- Step 2: Enter Transaction Details -->
+  <mat-step>
+    <ng-template matStepLabel >Enter Transaction Details</ng-template>
+    <form [formGroup]="transactionForm" (ngSubmit)="handleTransactionSubmit()">
+      <div>
+        <label for="fromAccountId">From Account ID:</label>
+        <input type="text" formControlName="fromAccountId" id="fromAccountId">
+      </div>
+      <div>
+        <label for="toAccountId">To Account ID:</label>
+        <input type="text" formControlName="toAccountId" id="toAccountId">
+      </div>
+      <div>
+        <label for="amount">Amount:</label>
+        <input type="number" formControlName="amount" id="amount">
+      </div>
+      <div>
+        <label for="currency">Currency:</label>
+        <input type="text" formControlName="currency" id="currency">
+      </div>
+      <div>
+        <label for="status">Status:</label>
+        <mat-select formControlName="status" id="status">
+          <mat-option *ngFor="let status of transactionStatuses" [value]="status">{{ status }}</mat-option>
+        </mat-select>
+      </div>
+      <div>
+        <button style="padding: 0px; background-color: #d7dfe3" mat-button type="button" (click)="prevStep()">Previous</button>
+        <button style="padding: 0px; background-color: #d7dfe3" mat-button type="submit" *ngIf="transactionForm.valid">Submit</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-vertical-stepper>
+  </mat-dialog-content>

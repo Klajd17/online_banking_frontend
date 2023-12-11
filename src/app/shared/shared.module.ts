@@ -38,6 +38,7 @@ import { AccordionDirective } from './components/accordion/accordion.directive';
 import {AccordionAnchorDirective} from './components/accordion/accordionanchor.directive';
 import {AccordionLinkDirective} from './components/accordion/accordionlink.directive';
 import {NgxUiLoaderConfig, NgxUiLoaderModule, SPINNER , PB_DIRECTION} from 'ngx-ui-loader';
+import {MenuItems} from "./components/menu-items";
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -107,7 +108,7 @@ const MaterialModules = [
     AccordionLinkDirective,
     AccordionDirective
   ],
-  providers: []
+  providers: [ MenuItems ]
 })
 export class SharedModule {
 }

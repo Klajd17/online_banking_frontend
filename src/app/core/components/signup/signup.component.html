@@ -1,1 +1,51 @@
-<p>signup works!</p>
+<mat-toolbar color="secondary">
+  <mat-toolbar-row fxLayout="row">
+    <span class="title-center">Sign Up</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="signupForm">
+    <div fxFlex fxLayout="column">
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" required type="text">
+        <mat-error *ngIf="signupForm.get('username')?.hasError('required')">This field is mandatory.</mat-error>
+        <mat-error *ngIf="signupForm.get('username')?.hasError('pattern')">Invalid username.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Full Name</mat-label>
+        <input matInput formControlName="fullName" required type="text">
+        <mat-error *ngIf="signupForm.get('fullName')?.hasError('required')">This field is mandatory.</mat-error>
+        <mat-error *ngIf="signupForm.get('fullName')?.hasError('pattern')">Invalid full name.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="address" required type="text">
+        <mat-error *ngIf="signupForm.get('address')?.hasError('required')">This field is mandatory.</mat-error>
+        <mat-error *ngIf="signupForm.get('address')?.hasError('pattern')">Invalid address.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required type="text">
+        <mat-error *ngIf="signupForm.get('email')?.hasError('required')">This field is mandatory.</mat-error>
+        <mat-error *ngIf="signupForm.get('email')?.hasError('pattern')">Invalid email.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Contact Number</mat-label>
+        <input matInput formControlName="phoneNumber" required type="text">
+        <mat-error *ngIf="signupForm.get('phoneNumber')?.hasError('required')">This field is mandatory.</mat-error>
+        <mat-error *ngIf="signupForm.get('phoneNumber')?.hasError('pattern')">Invalid contact number.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" required type="password">
+        <mat-error *ngIf="signupForm.get('password')?.hasError('required')">This field is mandatory.</mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+  </mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-raised-button color="primary" type="submit" (click)="handleSubmit()" [disabled]="!(signupForm.valid && signupForm.dirty)">Sign Up</button>
+  <button mat-raised-button color="primary" mat-dialog-close>Close</button>
+</mat-dialog-actions>

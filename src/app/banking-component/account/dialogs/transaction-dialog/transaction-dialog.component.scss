@@ -1,0 +1,112 @@
+.mat-toolbar{
+  margin: -24px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.title-center{
+  flex:1 1 auto;
+  text-align:center;
+}
+
+mat-form-field{
+  padding: 5px;
+}
+
+
+/* Add this to your global styles or component styles */
+.mat-toolbar {
+  background: linear-gradient(to right, #2196F3, #03A9F4); /* Use your preferred color scheme */
+  color: white;
+}
+
+.title-center {
+  flex: 1;
+  text-align: center;
+}
+
+.mat-vertical-stepper {
+  width: 100%;
+}
+
+.mat-step-header {
+  background-color: #2196F3; /* Match the toolbar color */
+}
+
+.mat-step-label {
+  color: white;
+}
+
+.mat-step-header-selected .mat-step-label {
+  background-color: #FFC107 !important;
+}
+
+/* Style the form */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px; /* Adjust based on your design */
+  margin: 0 auto; /* Center the form */
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input,
+mat-select {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* Style the buttons */
+button {
+  margin-right: 8px;
+}
+
+/* Style the stepper buttons */
+.mat-horizontal-stepper-header-container {
+  justify-content: center;
+}
+
+.mat-horizontal-stepper-header {
+  padding: 16px;
+}
+
+/* Add a subtle box shadow to the steps for depth */
+.mat-step {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a border radius to the form elements */
+input,
+mat-select,
+button {
+  border-radius: 4px;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Add some spacing between steps */
+.mat-step {
+  margin-bottom: 16px;
+}
+
+/* Add some padding to the form */
+.mat-dialog-content {
+  padding: 16px;
+}
+
+/* Add a subtle box shadow to the dialog content for depth */
+.mat-dialog-content {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bold-text{
+  font-weight: bold;
+}
+
+.mat-step-header .mat-step-icon-selected{
+  background-color: #0caf0c!important;
+  color: white;
+}

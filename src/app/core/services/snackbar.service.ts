@@ -16,7 +16,7 @@ export class SnackbarService {
         duration: 2000,
         panelClass: ['black-snackbar']
       });
-    } else {
+    } else if (action === 'success'){
       this.snackbar.open(message, '', {
         horizontalPosition: 'center',
         verticalPosition: 'top',  // Enclosed in quotes

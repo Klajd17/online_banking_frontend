@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import {UserModel} from "../core/models/models";
+import {NgxUiLoaderService} from "ngx-ui-loader";
+import {MatDialog} from "@angular/material/dialog";
+import {SnackbarService} from "../core/services/snackbar.service";
+import {Router} from "@angular/router";
+import {DashboardService} from "./services/dashboard.service";
+import {AccountModel} from "../banking-component/account/models/account-model";
+import {GlobalConstants} from "../shared/cons/global-constants";
+import {DashboardModel} from "./models/dashboard";
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +15,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  // @ts-ignore
+  user: UserModel = JSON.parse(localStorage.getItem('user'));
+  dashboardData: any;
+  responseMessage: any;
+  constructor(private dashboardService: DashboardService, private ngxService: NgxUiLoaderService, private dialog: MatDialog,
+              private snackbarService: SnackbarService, private router: Router) { }
 
   ngOnInit(): void {
+    console.log(this.user)
+    this.dashboardData = new DashboardModel();
+    this.getDashboardData()
   }
+
+  getDashboardData() {
+
+    this.dashboardService.getDashboardData().subscribe({
+      next: (response: DashboardModel) => {
+        this.dashboardData = response;
+        console.log(this.dashboardData);
+      },
+      error: (error) => {
+        if (error.status === 401) {
+        } else if (error.error?.message) {
+          this.responseMessage = error.error.message;
+        } else {
+          this.responseMessage = 'An error occurred. Please try again later.';
+        }
+        this.snackbarService.openSnackBar(this.responseMessage, GlobalConstants.error);
+      }
+    });
+  }
+
+
 
 }
